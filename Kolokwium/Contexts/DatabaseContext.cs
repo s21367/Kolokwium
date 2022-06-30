@@ -48,8 +48,8 @@ namespace Kolokwium.Contexts
             modelBuilder.Entity<Team>(p =>
             {
                 p.HasKey(e => e.TeamID);
-                p.Property(e => e.TeamName).IsRequired().HasMaxLength(50);
-                p.Property(e => e.TeamDescription).HasMaxLength(500);
+                p.Property(e => e.TeamName).IsRequired();
+                p.Property(e => e.TeamDescription);
                 p.HasOne(e => e.Organization)
                     .WithMany(e => e.Teams)
                     .HasForeignKey(e => e.OrganizationID)
